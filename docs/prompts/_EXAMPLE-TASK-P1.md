@@ -1,88 +1,72 @@
 # Prompt: TASK-CAR-INGESTION-P1-TESTING
 
-> Phase 1 of 1 (Final) | Task: Car Ingestion Lambda
+> Phase 1: Testing & Documentation
 
 ---
 
 ## Context
 
-**Spec:** `docs/specs/_EXAMPLE-TASK.md`  
-**Plan:** `docs/plans/_EXAMPLE-TASK.md`  
-**Previous Summary:** `docs/sums/TASK-CAR-INGESTION-P0-CORE.md`
+**Previous Phase:** P0-CORE completed on 2024-01-15
 
----
+### What Was Done in Phase 0
+- Created Pydantic Car model with validation
+- Implemented Lambda handler with DynamoDB integration
+- Used `batch_writer()` for performance
+- Added structured JSON logging
 
-## Previous Phase Summary
-
-**Phase 0 completed** — Core implementation done:
-
-- ✅ `src/handlers/car_ingestion.py` — Lambda handler with S3 trigger, batch DynamoDB writes
-- ✅ `src/models/car.py` — Pydantic v2 model with validation (year >= 1900, price > 0, vin = 17 chars)
-- ✅ Error handling — Invalid records logged, don't stop processing
-
-**Key decisions made:**
-- Batch writes of 25 (DynamoDB max)
-- Continue processing on validation errors
-- Table name from environment variable
-
----
-
-## Phase 1 Goal
-
-Achieve 100% test coverage and complete documentation.
-
----
+### Current State
+```
+src/
+├── models/
+│   └── car.py           # ✅ Complete
+└── handlers/
+    └── car_ingestion.py # ✅ Complete
+```
 
 ## Deliverables
 
-- [ ] Unit tests (`src/tests/test_car_ingestion.py`)
-  - Test valid car parsing
-  - Test invalid car handling (bad year, price, vin)
-  - Test batch write logic
-  - Test S3 event parsing
-  - Test DynamoDB error handling
-- [ ] Mocked AWS services using `moto`
-- [ ] Coverage report showing 100%
-- [ ] Docstrings on all public functions
-- [ ] README section documenting:
-  - How to deploy
-  - Environment variables needed
-  - Expected input format
+- [ ] Create `src/tests/test_car_ingestion.py`
+- [ ] Add moto for AWS service mocking
+- [ ] Achieve 100% code coverage
+- [ ] Create README with usage instructions
+- [ ] Test error cases (invalid data, DynamoDB failures)
 
----
+## Technical Details
+
+**Testing Stack:**
+- pytest
+- moto (AWS mocking)
+- pytest-cov (coverage)
+
+**Test Cases Needed:**
+1. Valid car data → successful write
+2. Invalid car data → validation error logged
+3. Missing required fields → clear error message
+4. DynamoDB failure → proper error handling
 
 ## Exit Criteria
 
 - [ ] All tests pass
-- [ ] Coverage at 100%
-- [ ] No functions without docstrings
-- [ ] README updated
-
----
-
-## Technical Notes
-
-- Use `pytest` + `moto` for testing
-- Use `pytest-cov` for coverage
-- Mock both S3 and DynamoDB
-
----
+- [ ] 100% code coverage
+- [ ] README documents usage and deployment
+- [ ] Error scenarios tested
 
 ## Files to Reference
 
-- `src/handlers/car_ingestion.py` — Handler to test
+- `docs/sums/TASK-CAR-INGESTION-P0-CORE.md` — What was built
 - `src/models/car.py` — Model to test
-- `docs/specs/_EXAMPLE-TASK.md` — Sample data format
+- `src/handlers/car_ingestion.py` — Handler to test
 
 ---
 
-## IMPORTANT
+## ⚠️ IMPORTANT — END OF PHASE
 
-At the end of this phase:
-1. Generate summary → `docs/sums/TASK-CAR-INGESTION-P1-TESTING.md`
-2. This is the final phase — no next prompt needed
-3. Update `CLAUDE.md`:
-   - Active Work → "None"
-   - Note task completion
-4. Update `README.md` with Lambda documentation
-5. Do not hallucinate
+When this phase is complete, you MUST:
+
+1. **Generate Summary** → `docs/sums/TASK-CAR-INGESTION-P1-TESTING.md`
+2. **Update CLAUDE.md** → Mark task as complete
+3. **Update README.md** → If needed
+
+This is the final phase. No next prompt needed.
+
+See `CLAUDE.md` for full protocol.

@@ -47,4 +47,10 @@
 2. Generate `docs/plans/PROJ-[NAME].md` with phased development plan
 3. Generate `docs/prompts/PROJ-[NAME]-P0-SETUP.md` for first phase
 
+Then at the end of **each phase**:
+
+4. Generate `docs/sums/PROJ-[NAME]-P{X}-{PHASE}.md` with phase summary
+5. Generate `docs/prompts/PROJ-[NAME]-P{X+1}-{PHASE}.md` for next phase
+6. Update `CLAUDE.md` current state table
+
 Follow the protocol in `CLAUDE.md`.

@@ -59,7 +59,7 @@ plans/TASK-FOO.md          # AI generates phased plan
 prompts/TASK-FOO-P0-*.md   # AI generates first prompt
         │
         ▼
-    [You work]
+    [You work on Phase 0]
         │
         ▼
 sums/TASK-FOO-P0-*.md      # AI generates summary
@@ -68,5 +68,18 @@ sums/TASK-FOO-P0-*.md      # AI generates summary
 prompts/TASK-FOO-P1-*.md   # AI generates next prompt
         │
         ▼
-    [Repeat]
+sums/TASK-FOO-P1-*.md      # AI generates summary
+        │
+        ▼
+    [Repeat until complete]
 ```
+
+## End of Phase Checklist
+
+At the end of **every phase**, AI must:
+
+1. ✅ Generate summary → `docs/sums/{TYPE}-{NAME}-P{X}-{PHASE}.md`
+2. ✅ Generate next prompt → `docs/prompts/{TYPE}-{NAME}-P{X+1}-{PHASE}.md`
+3. ✅ Update `CLAUDE.md` current state table
+4. ✅ Update project `README.md` if user-facing changes
+5. ✅ Verify all referenced files exist (no hallucination)

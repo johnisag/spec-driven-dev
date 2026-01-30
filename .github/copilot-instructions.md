@@ -23,7 +23,7 @@ At the end of EVERY phase:
    - Must include context from the summary
 3. **Update CLAUDE.md** — Current state table
 4. **Update README.md** — If user-facing changes
-5. **Do not hallucinate**
+5. **Do not hallucinate** — Only reference existing files/work
 
 ## Naming
 

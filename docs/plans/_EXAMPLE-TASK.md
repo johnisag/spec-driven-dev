@@ -1,47 +1,32 @@
 # Plan: TASK-CAR-INGESTION
 
-> Generated from spec: `docs/specs/_EXAMPLE-TASK.md`
+> Development plan for car ingestion Lambda function
+
+---
 
 ## Overview
 
-Lambda function to ingest car data from JSON files into DynamoDB with validation and error handling.
+Build a Lambda function that ingests car data from JSON files, validates using Pydantic, and writes to DynamoDB.
 
 ## Phases
 
 ### Phase 0: Core Implementation
-
-**Goal:** Build the core Lambda handler with data validation
-
 **Deliverables:**
-- [ ] Project structure (`src/handlers/`, `src/models/`)
-- [ ] Car Pydantic model with validation
-- [ ] Lambda handler skeleton
-- [ ] JSON parsing logic
+- [ ] Pydantic model for car validation
+- [ ] Lambda handler function
 - [ ] DynamoDB write logic
-- [ ] Basic error handling
+- [ ] Error handling and logging
 
-**Exit Criteria:**
-- Lambda can parse sample JSON
-- Valid cars written to DynamoDB
-- Invalid records logged (not crash)
+**Exit Criteria:** Lambda can process valid JSON and write to DynamoDB
 
----
-
-### Phase 1: Testing & Polish
-
-**Goal:** Achieve 100% test coverage and documentation
-
+### Phase 1: Testing & Documentation
 **Deliverables:**
-- [ ] Unit tests for all functions
-- [ ] Mocked AWS services (moto)
-- [ ] 100% coverage report
-- [ ] Docstrings on all functions
-- [ ] README section for this Lambda
+- [ ] Unit tests with mocked AWS services
+- [ ] 100% code coverage
+- [ ] README documentation
+- [ ] Error cases tested
 
-**Exit Criteria:**
-- All tests pass
-- Coverage at 100%
-- Documentation complete
+**Exit Criteria:** All tests pass, documentation complete
 
 ---
 
@@ -50,31 +35,23 @@ Lambda function to ingest car data from JSON files into DynamoDB with validation
 | Decision | Rationale |
 |----------|-----------|
 | Pydantic for validation | Type safety, clear error messages |
-| Moto for AWS mocks | Standard practice, good DynamoDB support |
-| Batch writes | Better performance than individual puts |
+| boto3 for AWS | Standard AWS SDK for Python |
+| pytest for testing | Industry standard, good mocking support |
 
 ---
 
-## File Structure (Target)
+## Files to Create
 
 ```
 src/
 ├── handlers/
-│   └── car_ingestion.py    # Lambda handler
+│   └── car_ingestion.py
 ├── models/
-│   └── car.py              # Pydantic model
+│   └── car.py
 └── tests/
     └── test_car_ingestion.py
 ```
 
 ---
 
-## IMPORTANT
-
-At the end of each phase:
-1. Generate summary → `docs/sums/TASK-CAR-INGESTION-P{X}-*.md`
-2. Generate next prompt → `docs/prompts/TASK-CAR-INGESTION-P{X+1}-*.md`
-   - Include context from the summary
-3. Update `CLAUDE.md` current state
-4. Update `README.md` if needed
-5. Do not hallucinate
+_Generated from spec: `docs/specs/TASK-CAR-INGESTION.md`_

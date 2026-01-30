@@ -1,34 +1,33 @@
 # Dependencies
 node_modules/
-venv/
-.venv/
 __pycache__/
 *.pyc
-
-# Build
-dist/
-build/
-.next/
-out/
+.venv/
+venv/
 
 # IDE
 .idea/
 .vscode/
 *.swp
+*.swo
 
 # OS
 .DS_Store
 Thumbs.db
 
+# Build outputs
+dist/
+build/
+*.egg-info/
+
 # Environment
 .env
 .env.local
-.env.*.local
+
+# Coverage
+.coverage
+htmlcov/
+coverage.xml
 
 # Logs
 *.log
-
-# Coverage
-coverage/
-.coverage
-htmlcov/

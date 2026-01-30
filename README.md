@@ -92,8 +92,8 @@ spec-driven-dev/
 specs/PROJ-MVP.md                    # Your spec
 plans/PROJ-MVP.md                    # Generated plan
 prompts/PROJ-MVP-P0-SETUP.md         # Phase 0 prompt
-prompts/PROJ-MVP-P1-DESIGN.md        # Phase 1 prompt
 sums/PROJ-MVP-P0-SETUP.md            # Phase 0 summary
+prompts/PROJ-MVP-P1-DESIGN.md        # Phase 1 prompt
 sums/PROJ-MVP-P1-DESIGN.md           # Phase 1 summary
 ```
 
@@ -126,8 +126,8 @@ Open your AI assistant (Claude, ChatGPT, etc.) and say:
 ### 4. Execute phases
 
 Work through each phase. At the end of each phase, the AI generates:
-- Summary of what was done
-- Prompt for the next phase (includes context from the summary)
+- **Summary** of what was done (`docs/sums/`)
+- **Prompt** for the next phase (`docs/prompts/`) — includes context from the summary
 
 ### 5. Continue until done
 

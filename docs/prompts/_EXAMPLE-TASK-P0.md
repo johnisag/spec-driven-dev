@@ -1,70 +1,55 @@
 # Prompt: TASK-CAR-INGESTION-P0-CORE
 
-> Phase 0 of 1 | Task: Car Ingestion Lambda
+> Phase 0: Core Implementation
 
 ---
 
 ## Context
 
-**Spec:** `docs/specs/_EXAMPLE-TASK.md`  
-**Plan:** `docs/plans/_EXAMPLE-TASK.md`
+We're building a Lambda function to ingest car data from JSON files into DynamoDB.
 
-**What we're building:**  
-Lambda function to ingest car data from JSON into DynamoDB with Pydantic validation.
-
-**Previous phases:** None (this is Phase 0)
-
----
-
-## Phase 0 Goal
-
-Build the core Lambda handler with data validation.
-
----
+**Spec:** `docs/specs/TASK-CAR-INGESTION.md`
+**Plan:** `docs/plans/TASK-CAR-INGESTION.md`
 
 ## Deliverables
 
-- [ ] Project structure
-  - `src/handlers/car_ingestion.py`
-  - `src/models/car.py`
-- [ ] Car Pydantic model with fields: make, model, year, price, vin
-- [ ] Lambda handler that:
-  - Reads JSON from S3 event
-  - Validates each car record
-  - Writes valid cars to DynamoDB
-  - Logs invalid records (doesn't crash)
-- [ ] Basic error handling
+- [ ] Create `src/models/car.py` with Pydantic model
+- [ ] Create `src/handlers/car_ingestion.py` with Lambda handler
+- [ ] Implement DynamoDB write logic
+- [ ] Add error handling and logging
 
----
+## Technical Details
+
+**Car Model Fields:**
+- `make` (str, required)
+- `model` (str, required)
+- `year` (int, required, 1900-2100)
+- `price` (float, required, > 0)
+- `vin` (str, required, unique identifier)
+
+**Lambda Input:** S3 event with JSON file location
+**Lambda Output:** Success/failure response with count of processed records
 
 ## Exit Criteria
 
-- [ ] Lambda can parse sample JSON file
-- [ ] Valid cars are written to DynamoDB
-- [ ] Invalid records logged with details
-- [ ] No unhandled exceptions
-
----
-
-## Technical Notes
-
-- Use Pydantic v2 for validation
-- DynamoDB table name from environment variable
-- Batch writes for performance (25 items max per batch)
-
----
+- [ ] Lambda processes valid JSON input
+- [ ] Valid cars written to DynamoDB
+- [ ] Invalid records logged with clear error messages
+- [ ] Code follows project conventions
 
 ## Files to Reference
 
-- Sample data format in spec: `docs/specs/_EXAMPLE-TASK.md`
+- `docs/specs/TASK-CAR-INGESTION.md` — Requirements
+- `docs/plans/TASK-CAR-INGESTION.md` — Full plan
 
 ---
 
-## IMPORTANT
+## ⚠️ IMPORTANT — END OF PHASE
 
-At the end of this phase:
-1. Generate summary → `docs/sums/TASK-CAR-INGESTION-P0-CORE.md`
-2. Generate next prompt → `docs/prompts/TASK-CAR-INGESTION-P1-TESTING.md`
-   - Include key context from the summary
-3. Update `CLAUDE.md` current state
-4. Do not hallucinate
+When this phase is complete, you MUST:
+
+1. **Generate Summary** → `docs/sums/TASK-CAR-INGESTION-P0-CORE.md`
+2. **Generate Next Prompt** → `docs/prompts/TASK-CAR-INGESTION-P1-TESTING.md`
+3. **Update CLAUDE.md** → Current state table
+
+See `CLAUDE.md` for full protocol.

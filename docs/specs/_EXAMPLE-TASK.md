@@ -46,4 +46,10 @@ Lambda function to ingest a feed of cars from JSON files into DynamoDB.
 1. Generate `docs/plans/TASK-CAR-INGESTION.md` with phased plan
 2. Generate `docs/prompts/TASK-CAR-INGESTION-P0-CORE.md` for first phase
 
+Then at the end of **each phase**:
+
+3. Generate `docs/sums/TASK-CAR-INGESTION-P{X}-{PHASE}.md` with phase summary
+4. Generate `docs/prompts/TASK-CAR-INGESTION-P{X+1}-{PHASE}.md` for next phase
+5. Update `CLAUDE.md` current state table
+
 Follow the protocol in `CLAUDE.md`.
