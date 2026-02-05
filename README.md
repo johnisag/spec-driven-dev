@@ -59,6 +59,7 @@ spec-driven-dev/
 └── docs/
     ├── README.md                  # Docs overview
     ├── CONSTITUTION.md            # Non-negotiable rules for AI agents
+    ├── TOOLING.md                 # Optional tools: Beads, Qodo, multi-agent
     ├── ARCHITECTURE.md            # System design (AI generates for PROJ-)
     │
     ├── specs/                     # YOU write these

@@ -6,6 +6,7 @@
 docs/
 ├── README.md           # This file
 ├── CONSTITUTION.md     # Non-negotiable rules for AI agents
+├── TOOLING.md          # Optional tools: Beads, Qodo, multi-agent
 ├── ARCHITECTURE.md     # System design (AI generates for PROJ-)
 │
 ├── specs/              # Specifications — YOU write these

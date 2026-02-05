@@ -69,6 +69,14 @@
 - [Boundary condition or error scenario 1]
 - [Boundary condition or error scenario 2]
 
+## Related Files (optional, for complex projects)
+
+> Split large specs into focused files. Delete this section if not needed.
+> See `docs/TOOLING.md` → "File Separation for Large Projects" for guidance.
+
+- `docs/specs/PROJ-[NAME]-DATA.md` — Data model definitions
+- `docs/specs/PROJ-[NAME]-API.md` — API contracts and endpoints
+
 ---
 
 ## Generate

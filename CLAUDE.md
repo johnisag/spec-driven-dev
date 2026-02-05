@@ -42,6 +42,7 @@ npm run test       # Run tests
 |----------|---------|-------------|
 | `CLAUDE.md` | Entry point, current state, protocol | You + AI updates |
 | `docs/CONSTITUTION.md` | Non-negotiable rules for AI agents | You + AI updates |
+| `docs/TOOLING.md` | Optional tools: Beads, Qodo, multi-agent | Reference |
 | `docs/ARCHITECTURE.md` | System design, components, decisions | AI generates |
 | `docs/specs/` | Requirements and briefs | **You write** |
 | `docs/plans/` | Development plans with phases | AI generates |
@@ -53,6 +54,14 @@ npm run test       # Run tests
 ## End of Phase Protocol
 
 ### ⚠️ IMPORTANT — AI MUST DO THIS AT THE END OF EVERY PHASE
+
+#### 0. Quality Check (optional)
+
+Before generating the summary, verify the phase deliverables:
+- Run tests if applicable (`npm test`, `pytest`, etc.)
+- Confirm code lints cleanly
+- Review output against spec requirements
+- See `docs/TOOLING.md` for recommended quality tools (Qodo, etc.)
 
 #### 1. Generate Summary
 
