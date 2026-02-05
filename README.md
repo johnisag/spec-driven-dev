@@ -52,11 +52,13 @@ spec-driven-dev/
 ├── .github/
 │   └── copilot-instructions.md    # For GitHub Copilot
 ├── .gitignore
+├── .mcp.json                      # MCP server configs (Context7, etc.)
 ├── CLAUDE.md                      # Entry point + protocol
 ├── README.md                      # This file
 │
 └── docs/
     ├── README.md                  # Docs overview
+    ├── CONSTITUTION.md            # Non-negotiable rules for AI agents
     ├── ARCHITECTURE.md            # System design (AI generates for PROJ-)
     │
     ├── specs/                     # YOU write these
@@ -155,6 +157,24 @@ Check the `_EXAMPLE-*` files in each folder to see the workflow in action:
 - [Example Phase 0 Prompt](./docs/prompts/_EXAMPLE-TASK-P0.md)
 - [Example Phase 0 Summary](./docs/sums/_EXAMPLE-TASK-P0.md)
 - [Example Phase 1 Prompt](./docs/prompts/_EXAMPLE-TASK-P1.md)
+
+## MCP Servers
+
+The `.mcp.json` file includes recommended MCP servers for AI coding assistants:
+
+| Server | Purpose | Config Needed |
+|--------|---------|---------------|
+| **Context7** | Up-to-date library docs in AI context | None (zero-config) |
+
+To add the GitHub MCP server for issues/PRs integration, add to `.mcp.json`:
+
+```json
+"github": {
+  "command": "npx",
+  "args": ["-y", "@modelcontextprotocol/server-github"],
+  "env": { "GITHUB_PERSONAL_ACCESS_TOKEN": "your-token-here" }
+}
+```
 
 ## License
 

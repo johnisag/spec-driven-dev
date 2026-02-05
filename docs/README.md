@@ -5,6 +5,7 @@
 ```
 docs/
 ├── README.md           # This file
+├── CONSTITUTION.md     # Non-negotiable rules for AI agents
 ├── ARCHITECTURE.md     # System design (AI generates for PROJ-)
 │
 ├── specs/              # Specifications — YOU write these
@@ -27,8 +28,9 @@ docs/
 
 ## What Goes Where
 
-| Folder | Who Creates | Purpose |
-|--------|-------------|---------|
+| File/Folder | Who Creates | Purpose |
+|-------------|-------------|---------|
+| `CONSTITUTION.md` | **You** + AI | Non-negotiable rules all AI agents must follow |
 | `specs/` | **You** | Requirements, constraints, what you want built |
 | `plans/` | AI | Phased development plan with deliverables |
 | `prompts/` | AI | Context + instructions for each phase |

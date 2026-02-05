@@ -5,6 +5,7 @@ This project uses **spec-driven development**.
 ## Key Files
 
 - `CLAUDE.md` — Entry point, current state, full protocol
+- `docs/CONSTITUTION.md` — Non-negotiable rules for AI agents (read before working)
 - `docs/specs/` — Specifications (human writes)
 - `docs/plans/` — Development plans (AI generates)
 - `docs/prompts/` — Phase prompts (AI generates)

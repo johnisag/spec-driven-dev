@@ -8,9 +8,13 @@
 
 ## Requirements
 
-- [ ] [Requirement 1]
-- [ ] [Requirement 2]
-- [ ] [Requirement 3]
+| ID | Requirement |
+|----|-------------|
+| FR-001 | [Must ...] |
+| FR-002 | [Must ...] |
+| FR-003 | [Must ...] |
+
+> Mark anything unclear as `[NEEDS CLARIFICATION]` — do not guess.
 
 ## Technical Details
 
@@ -24,6 +28,10 @@
 
 **Output:** [What it produces]
 
+## Edge Cases
+
+- [Boundary condition or error scenario]
+
 ## Testing
 
 - [ ] Unit tests
@@ -35,13 +43,15 @@
 
 **AI, please:**
 
-1. Generate `docs/plans/TASK-[NAME].md` with phased plan
-2. Generate `docs/prompts/TASK-[NAME]-P0-{PHASE}.md` for first phase
+1. Read `docs/CONSTITUTION.md` — these rules are non-negotiable
+2. Generate `docs/plans/TASK-[NAME].md` with phased plan
+   - Mark independent tasks with `[P]` for parallel execution
+3. Generate `docs/prompts/TASK-[NAME]-P0-{PHASE}.md` for first phase
 
 Then at the end of **each phase**:
 
-3. Generate `docs/sums/TASK-[NAME]-P{X}-{PHASE}.md` with phase summary
-4. Generate `docs/prompts/TASK-[NAME]-P{X+1}-{PHASE}.md` for next phase
-5. Update `CLAUDE.md` current state table
+4. Generate `docs/sums/TASK-[NAME]-P{X}-{PHASE}.md` with phase summary
+5. Generate `docs/prompts/TASK-[NAME]-P{X+1}-{PHASE}.md` for next phase
+6. Update `CLAUDE.md` current state table
 
 Follow the protocol in `CLAUDE.md`.

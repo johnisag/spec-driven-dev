@@ -41,6 +41,7 @@ npm run test       # Run tests
 | Location | Purpose | Who Creates |
 |----------|---------|-------------|
 | `CLAUDE.md` | Entry point, current state, protocol | You + AI updates |
+| `docs/CONSTITUTION.md` | Non-negotiable rules for AI agents | You + AI updates |
 | `docs/ARCHITECTURE.md` | System design, components, decisions | AI generates |
 | `docs/specs/` | Requirements and briefs | **You write** |
 | `docs/plans/` | Development plans with phases | AI generates |

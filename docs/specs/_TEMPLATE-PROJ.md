@@ -17,6 +17,30 @@
 - [ ] [Feature 2]
 - [ ] [Feature 3]
 
+## Requirements
+
+| ID | Requirement | Priority |
+|----|-------------|----------|
+| FR-001 | [System MUST ...] | P1 |
+| FR-002 | [Users MUST be able to ...] | P1 |
+| FR-003 | [System SHOULD ...] | P2 |
+
+> Mark anything unclear as `[NEEDS CLARIFICATION]` — do not guess.
+
+## Acceptance Criteria
+
+### AC-001: [Scenario name]
+
+- **Given** [precondition]
+- **When** [action]
+- **Then** [expected result]
+
+### AC-002: [Scenario name]
+
+- **Given** [precondition]
+- **When** [action]
+- **Then** [expected result]
+
 ## Non-Goals
 
 - [What you're NOT building]
@@ -33,9 +57,17 @@
 - [Budget: e.g., Free tier only]
 - [Technical: e.g., Must work offline]
 
-## Success Metrics
+## Success Criteria
 
-- [How you'll know it's working]
+| ID | Metric | Target |
+|----|--------|--------|
+| SC-001 | [e.g., Page load time] | [e.g., < 2s] |
+| SC-002 | [e.g., Test coverage] | [e.g., > 80%] |
+
+## Edge Cases
+
+- [Boundary condition or error scenario 1]
+- [Boundary condition or error scenario 2]
 
 ---
 
@@ -43,14 +75,16 @@
 
 **AI, please:**
 
-1. Generate `docs/ARCHITECTURE.md` with system design
-2. Generate `docs/plans/PROJ-[NAME].md` with phased development plan
-3. Generate `docs/prompts/PROJ-[NAME]-P0-SETUP.md` for first phase
+1. Read `docs/CONSTITUTION.md` — these rules are non-negotiable
+2. Generate `docs/ARCHITECTURE.md` with system design
+3. Generate `docs/plans/PROJ-[NAME].md` with phased development plan
+   - Mark independent tasks with `[P]` for parallel execution
+4. Generate `docs/prompts/PROJ-[NAME]-P0-SETUP.md` for first phase
 
 Then at the end of **each phase**:
 
-4. Generate `docs/sums/PROJ-[NAME]-P{X}-{PHASE}.md` with phase summary
-5. Generate `docs/prompts/PROJ-[NAME]-P{X+1}-{PHASE}.md` for next phase
-6. Update `CLAUDE.md` current state table
+5. Generate `docs/sums/PROJ-[NAME]-P{X}-{PHASE}.md` with phase summary
+6. Generate `docs/prompts/PROJ-[NAME]-P{X+1}-{PHASE}.md` for next phase
+7. Update `CLAUDE.md` current state table
 
 Follow the protocol in `CLAUDE.md`.
